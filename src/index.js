@@ -1,5 +1,11 @@
 import "./styles.css";
 
+const header = document.createElement('header');
+header.id = 'header';
+header.innerHTML = '<h1>Things-ToDo</h1>';
+document.body.prepend(header);
+
+
 const container = document.createElement('div');
 container.id = 'todo-container';
 document.body.appendChild(container);
@@ -7,7 +13,7 @@ document.body.appendChild(container);
 const addButton = document.createElement('button');
 addButton.textContent = 'Add Task';
 addButton.id = 'add-task-button';
-document.body.prepend(addButton);
+header.appendChild(addButton);
 
 const modal = document.createElement('div');
 modal.id = 'modal';
@@ -140,3 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
   savedItems.forEach(item => toDoItems.push(item));
   renderItems();
 });
+
+const footer = document.createElement('footer');
+footer.id = 'footer';
+footer.innerHTML = '<p>Created by Dev Mfundo</p>';
+document.body.appendChild(footer);
